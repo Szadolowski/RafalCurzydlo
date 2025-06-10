@@ -1,12 +1,13 @@
 import { PortfolioContext } from "../store/portfolio-context";
 import { use } from "react";
 
-function NavElement({ children, position = null }) {
+function NavElement({ children, position = null, ...props }) {
   const round =
     position === "left" ? "rounded-tl-2xl" : position === "right" ? "rounded-tr-2xl" : "";
   return (
     <div
-      className={`group flex justify-center w-full px-5 py-1 border border-solid ${round} border-neutral-700 bg-neutral-800 text-neutral-400 hover:text-neutral-300 hover:bg-neutral-700 transition-colors duration-200 font-semibold`}
+      className={`group flex justify-center w-full px-5 py-1 border border-solid ${round} border-neutral-700 bg-neutral-800 text-neutral-400 hover:text-neutral-300 hover:bg-neutral-700 transition-colors duration-200 font-semibold cursor-pointer`}
+      {...props}
     >
       {children}
     </div>
@@ -22,11 +23,15 @@ export default function Block({ children }) {
     <div className="flex flex-col items-start justify-center w-full h-full">
       <nav className="flex flex-row w-full rounded-">
         {portfolioContext.card.map((item, index) => (
-          <NavElement key={index} position={index === 0 ? "left" : null}>
-            {item}
+          <NavElement
+            key={index}
+            position={index === 0 ? "left" : null}
+            onClick={() => portfolioContext.setChoosenCard(item)}
+          >
+            {portfolioContext.information[item]?.title || item}
           </NavElement>
         ))}
-        <NavElement position={"right"}>
+        <NavElement position={"right"} onClick={() => portfolioContext.setChoosenCard("menu")}>
           <div className="flex flex-col items-center justify-center w-full h-full px-5 py-1 space-y-0.5 grup">
             <span className={burgerMenu} />
             <span className={burgerMenu} />
