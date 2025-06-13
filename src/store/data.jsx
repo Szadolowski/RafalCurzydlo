@@ -1,10 +1,11 @@
+import Envelope from "../svg/Envelope";
+import GitHub from "../svg/GitHub";
+import LinkedIn from "../svg/LinkedIn";
+import Pin from "../svg/Pin";
+import Telephone from "../svg/Telephone";
+
 export const cardData = ["Home", "Skills", "Projects", "Contact", "Employer", "Education"];
 export const information = {
-  Menu: {
-    title: "Menu",
-    description:
-      "This is the menu section where you can find all the links to my projects and contact information.",
-  },
   Home: {
     title: "Home",
     description: () => {
@@ -30,22 +31,43 @@ export const information = {
   },
   Skills: {
     title: "Skills",
-    description: () => {
-      return (
-        <>
-          <h1 className="text-2xl font-bold text-neutral-200">My Skills</h1>
-          <p className="mt-3 text-neutral-300">
-            I have experience in various web development technologies, including:
-          </p>
-          <ul className="mt-4 list-disc list-inside text-neutral-300">
-            <li>JavaScript (ES6+)</li>
-            <li>React.js</li>
-            <li>Tailwind CSS</li>
-            <li>Node.js</li>
-            <li>Git & GitHub</li>
-          </ul>
-        </>
-      );
+    skillsGroup: {
+      frontend: [
+        { name: "ReactJS", level: 3 },
+        { name: "JavaScript (ES6+)", level: 3 },
+        { name: "HTML", level: 3 },
+        { name: "CSS (CSS3)", level: 3 },
+        { name: "TailwindCSS", level: 3 },
+        { name: "Framer Motion", level: 2 },
+        { name: "TypeScript", level: 2 },
+        { name: "Redux", level: 2 },
+      ],
+      backend: [
+        { name: "Node.js", level: 2 },
+        { name: "PHP", level: 1 },
+        { name: "C++", level: 1 },
+        { name: "SQL", level: 2 },
+      ],
+      tools: [
+        { name: "Git", level: 3 },
+        { name: "GitHub", level: 3 },
+        { name: "npm", level: 3 },
+        { name: "VSCode", level: 3 },
+      ],
+      platforms: [
+        { name: "Windows", level: 3 },
+        { name: "Linux", level: 2 },
+        { name: "MacOS", level: 1 },
+      ],
+      networking: [
+        { name: "MikroTik", level: 2 },
+        { name: "Cisco", level: 2 },
+        { name: "LAN/WAN configuration", level: 2 },
+      ],
+      languages: [
+        { name: "Polish", level: 5 },
+        { name: "English", level: 3 },
+      ],
     },
   },
   Projects: {
@@ -53,73 +75,77 @@ export const information = {
     description: () => {
       return (
         <>
-          <h1 className="text-2xl font-bold text-neutral-200">My Projects</h1>
-          <p className="mt-3 text-neutral-300">
-            Here you can find a list of my projects. Each project has a brief description and a link
-            to the source code.
-          </p>
-          <p className="mt-4 text-neutral-300">
-            Feel free to explore and check out the code on GitHub!
-          </p>
+          <h1 className="text-4xl font-bold text-neutral-200">Work in progress</h1>
         </>
       );
     },
   },
   Contact: {
     title: "Contact",
-    description: () => {
-      return (
-        <>
-          <h1 className="text-2xl font-bold text-neutral-200">Get in Touch</h1>
-          <p className="mt-3 text-neutral-300">
-            If you have any questions or want to collaborate, feel free to reach out!
-          </p>
-          <p className="mt-4 text-neutral-300">
-            You can contact me via email or connect with me on LinkedIn.
-          </p>
-        </>
-      );
-    },
+    information: [
+      {
+        type: "Email",
+        value: "rafallcurzydlo.biz@gmail.com",
+        svg: <Envelope />,
+      },
+      {
+        type: "Phone",
+        value: "+48 792 802 918",
+        svg: <Telephone />,
+      },
+      {
+        type: "Location",
+        value: "Słopnice, Poland",
+        svg: <Pin />,
+      },
+      {
+        type: "LinkedIn",
+        value: "https://www.linkedin.com/in/rafalcurzydlo/",
+        svg: <LinkedIn />,
+      },
+      {
+        type: "GitHub",
+        value: "https://github.com/Szadolowski",
+        svg: <GitHub />,
+      },
+      {
+        type: "Portfolio",
+        value: "https://twojastrona.pl", // Replace with your actual portfolio URL
+      },
+    ],
   },
   Employer: {
     title: "Employer",
-    description: () => {
-      return (
-        <>
-          <h1 className="text-2xl font-bold text-neutral-200">My Work Experience</h1>
-          <p className="mt-3 text-neutral-300">
-            I have worked with various companies and clients, gaining valuable experience in web
-            development.
-          </p>
-          <p className="mt-4 text-neutral-300">
-            My roles have included front-end development, project management, and team
-            collaboration.
-          </p>
-        </>
-      );
-    },
+    company: [
+      {
+        name: "Laskopol Sp. z o.o.",
+        position: "IT Specialist",
+        year: "2024 – present",
+        description:
+          "Developed internal dashboards and automation tools in ReactJS and Next.js, streamlining reporting and materials management for the company.",
+      },
+      {
+        name: "GM PROJEKT",
+        position: "Office Intern",
+        year: "2024",
+        description:
+          "Created data-driven reporting panels and optimized UI components in ReactJS, improving workflow efficiency and technical documentation.",
+      },
+    ],
   },
   Education: {
     title: "Education",
-    school: {
-      name: "University of Technology",
-      degree: "Bachelor of Science in Computer Science",
-      year: "2018 - 2022",
-    },
-    description: () => {
-      return (
-        <>
-          <h1 className="text-2xl font-bold text-neutral-200">My Education</h1>
-          <p className="mt-3 text-neutral-300">
-            I hold a degree in Computer Science and have completed various online courses in web
-            development.
-          </p>
-          <p className="mt-4 text-neutral-300">
-            My education has provided me with a strong foundation in programming and software
-            development.
-          </p>
-        </>
-      );
-    },
+    school: [
+      {
+        name: "Akademia Nauk Stosowanych w Nowym Sączu",
+        degree: "Bachelor of Science in Applied Computer Science",
+        year: "2024 - present",
+      },
+      {
+        name: "Zespół Szkół Technicznych i Ogólnokształcących w Limanowej",
+        degree: "Technik Informatyk",
+        year: "2019 - 2024",
+      },
+    ],
   },
 };

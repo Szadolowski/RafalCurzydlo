@@ -1,6 +1,7 @@
 import { PortfolioContext } from "../store/portfolio-context";
 import { use } from "react";
 import { motion } from "motion/react"; // eslint-disable-line
+import Skills from "./Skills";
 
 function NavElement({ children, position = null, choose, ...props }) {
   const round =
@@ -17,10 +18,27 @@ function NavElement({ children, position = null, choose, ...props }) {
   );
 }
 
-export default function Block({ children }) {
+export default function Block() {
   const burgerMenu = "bg-black w-5 h-1 bg-neutral-400 group-hover::bg-neutral-300";
 
   const portfolioContext = use(PortfolioContext);
+
+  const renderContent = () => {
+    switch (portfolioContext.choosenCard) {
+      case "Home":
+        return portfolioContext.information.Home.description();
+      case "About":
+        return portfolioContext.information.About.description();
+      case "Skills":
+        return <Skills />;
+      case "Projects":
+        return portfolioContext.information.Projects.description();
+      case "Contact":
+        return portfolioContext.information.Contact.description();
+      default:
+        return <p className="text-neutral-300">Select a card to view its content.</p>;
+    }
+  };
 
   return (
     <div className="flex flex-col items-start justify-center w-full h-full">
@@ -56,8 +74,8 @@ export default function Block({ children }) {
         </NavElement>
       </nav>
 
-      <div className="flex flex-col items-start object-cover w-full h-full px-10 py-8 border border-solid rounded-b-2xl border-neutral-700 bg-neutral-800">
-        {children}
+      <div className="flex flex-col items-start object-cover w-full h-full px-5 py-4 border border-solid rounded-b-2xl border-neutral-700 bg-neutral-800">
+        {renderContent()}
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import MenuElements from "./components/MenuElements";
 import { motion, LayoutGroup } from "motion/react"; // eslint-disable-line
 
 function App() {
-  const [choosenCard, setChoosenCard] = useState(null);
+  const [choosenCard, setChoosenCard] = useState("Home");
 
   return (
     <PortfolioContext
@@ -24,15 +24,7 @@ function App() {
           layout
         >
           <SideBar />
-          {choosenCard === "menu" ? (
-            <MenuElements />
-          ) : (
-            <Block>
-              {typeof information[choosenCard]?.description === "function"
-                ? information[choosenCard].description()
-                : information[choosenCard]?.description}
-            </Block>
-          )}
+          {choosenCard === "menu" ? <MenuElements /> : <Block />}
         </motion.div>
       </LayoutGroup>
     </PortfolioContext>
