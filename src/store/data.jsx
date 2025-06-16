@@ -3,6 +3,22 @@ import GitHub from "../svg/GitHub";
 import LinkedIn from "../svg/LinkedIn";
 import Pin from "../svg/Pin";
 import Telephone from "../svg/Telephone";
+import Git from "../svg/Git";
+import ReactJS from "../svg/ReactJS";
+import Javascript from "../svg/Javascript";
+import Html5 from "../svg/Html5";
+import Css3 from "../svg/Css3";
+import Tailwindcss from "../svg/Tailwindcss";
+import Framer from "../svg/Framer";
+import Typescript from "../svg/Typescript";
+import Nodejs from "../svg/Nodejs";
+import Php from "../svg/Php";
+import Npm from "../svg/Npm";
+import VsCode from "../svg/VsCode";
+import Windows from "../svg/Windows";
+import Ubuntu from "../svg/Ubuntu";
+import AppleBrand from "../svg/AppleBrand";
+import Cisco from "../svg/Cisco";
 
 export const cardData = ["Home", "Skills", "Projects", "Contact", "Employer", "Education"];
 export const information = {
@@ -33,36 +49,36 @@ export const information = {
     title: "Skills",
     skillsGroup: {
       frontend: [
-        { name: "ReactJS", level: 3 },
-        { name: "JavaScript (ES6+)", level: 3 },
-        { name: "HTML", level: 3 },
-        { name: "CSS (CSS3)", level: 3 },
-        { name: "TailwindCSS", level: 3 },
-        { name: "Framer Motion", level: 2 },
-        { name: "TypeScript", level: 2 },
-        { name: "Redux", level: 2 },
+        { name: "ReactJS", level: 3.5, svg: <ReactJS /> },
+        { name: "JavaScript (ES6+)", level: 4, svg: <Javascript /> },
+        { name: "HTML", level: 4, svg: <Html5 /> },
+        { name: "CSS (CSS3)", level: 3, svg: <Css3 /> },
+        { name: "TailwindCSS", level: 4, svg: <Tailwindcss /> },
+        { name: "Framer Motion", level: 3, svg: <Framer /> },
+        { name: "TypeScript", level: 2.5, svg: <Typescript /> },
+        { name: "Redux", level: 1.5 },
       ],
       backend: [
-        { name: "Node.js", level: 2 },
-        { name: "PHP", level: 1 },
-        { name: "C++", level: 1 },
-        { name: "SQL", level: 2 },
+        { name: "Node.js", level: 2, svg: <Nodejs /> },
+        { name: "PHP", level: 2, svg: <Php /> },
+        { name: "C++", level: 2 },
+        { name: "SQL", level: 1 },
       ],
       tools: [
-        { name: "Git", level: 3 },
-        { name: "GitHub", level: 3 },
-        { name: "npm", level: 3 },
-        { name: "VSCode", level: 3 },
+        { name: "Git", level: 4, svg: <Git /> },
+        { name: "GitHub", level: 4, svg: <GitHub width="40px" height="40px" color="#737373" /> },
+        { name: "npm", level: 3, svg: <Npm /> },
+        { name: "VSCode", level: 5, svg: <VsCode /> },
       ],
       platforms: [
-        { name: "Windows", level: 3 },
-        { name: "Linux", level: 2 },
-        { name: "MacOS", level: 1 },
+        { name: "Windows", level: 5, svg: <Windows /> },
+        { name: "Linux", level: 4, svg: <Ubuntu /> },
+        { name: "MacOS", level: 3, svg: <AppleBrand /> },
       ],
       networking: [
-        { name: "MikroTik", level: 2 },
-        { name: "Cisco", level: 2 },
-        { name: "LAN/WAN configuration", level: 2 },
+        { name: "MikroTik", level: 3 },
+        { name: "Cisco", level: 3, svg: <Cisco /> },
+        { name: "LAN/WAN configuration", level: 4 },
       ],
       languages: [
         { name: "Polish", level: 5 },
