@@ -1,6 +1,6 @@
 import { PortfolioContext } from "../store/portfolio-context";
 import { use, useState } from "react";
-import { LayoutGroup, AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react"; //es-lint-disable-line
 
 export default function Skills() {
   const portfolioContext = use(PortfolioContext);
@@ -9,7 +9,7 @@ export default function Skills() {
   const categorys = Object.keys(data.skillsGroup);
 
   return (
-    <div className="w-full h-full">
+    <div className="object-cover w-full h-full">
       <h1 className="text-2xl font-bold text-neutral-200">{data.title}</h1>
       <main className="flex flex-row w-full h-full space-x-5">
         <aside>
@@ -35,7 +35,7 @@ export default function Skills() {
           </ul>
         </aside>
 
-        <section className="w-full">
+        <section className="w-full h-full overflow-y-auto">
           {data.skillsGroup[skillsGroup].map((skill, index) => {
             return (
               <motion.section

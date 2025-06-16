@@ -42,7 +42,7 @@ export default function Block() {
 
   return (
     <div className="flex flex-col items-start justify-center w-full h-full">
-      <nav className="flex flex-row w-full rounded-">
+      <nav className="flex flex-row w-full">
         {portfolioContext.card.map((item, index) => (
           <NavElement
             key={index}

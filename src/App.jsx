@@ -20,7 +20,7 @@ function App() {
     >
       <LayoutGroup>
         <motion.div
-          className="flex flex-row items-center justify-center w-full h-screen p-16 space-x-16 bg-neutral-900"
+          className="flex flex-col items-center justify-center w-full h-screen p-10 space-x-16 lg:flex-row bg-neutral-900"
           layout
         >
           <SideBar />
