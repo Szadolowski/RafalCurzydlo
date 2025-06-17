@@ -11,6 +11,10 @@ export default function MenuElements() {
     >
       {portfolioContext.card.map((item, index) => (
         <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          transition={{ duration: 0.3 }}
           className="flex items-center justify-center w-3/4 h-24 px-4 py-2 font-semibold transition-colors duration-200 rounded-lg cursor-pointer bg-neutral-800 hover:bg-neutral-700 text-neutral-300"
           key={index}
           onClick={() => portfolioContext.setChoosenCard(item)}

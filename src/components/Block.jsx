@@ -3,14 +3,15 @@ import { use } from "react";
 import { motion } from "motion/react"; // eslint-disable-line
 import Skills from "./Skills";
 
-function NavElement({ children, position = null, choose, ...props }) {
+function NavElement({ children, position = null, choose, menu = false, ...props }) {
   const round =
     position === "left" ? "rounded-tl-2xl" : position === "right" ? "rounded-tr-2xl" : "";
 
+  const chooseClass = menu ? "lg:rounded-tl-none rounded-tl-2xl  w-full visible" : "";
   return (
     <motion.div
       layoutId={children}
-      className={`group flex justify-center w-full px-5 py-1 border border-solid ${round} ${choose} border-neutral-700  hover:text-neutral-300 hover:bg-neutral-700 transition-colors duration-200 font-semibold cursor-pointer`}
+      className={`${chooseClass} group flex justify-center px-5 py-1 lg:w-full invisible lg:visible border border-solid ${round} ${choose} border-neutral-700  hover:text-neutral-300 hover:bg-neutral-700 transition-colors duration-200 font-semibold cursor-pointer`}
       {...props}
     >
       {children}
@@ -41,8 +42,14 @@ export default function Block() {
   };
 
   return (
-    <div className="flex flex-col items-start justify-center w-full h-full">
-      <nav className="flex flex-row w-full">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.3 }}
+      className="flex flex-col items-start justify-center object-cover w-full overflow-hidden resize-none min-h-4/5 max-h-4/5"
+    >
+      <nav className="flex flex-row flex-wrap w-full lg:flex-nowrap">
         {portfolioContext.card.map((item, index) => (
           <NavElement
             key={index}
@@ -58,6 +65,7 @@ export default function Block() {
           </NavElement>
         ))}
         <NavElement
+          menu={true}
           position={"right"}
           onClick={() => portfolioContext.setChoosenCard("menu")}
           choose={
@@ -74,9 +82,9 @@ export default function Block() {
         </NavElement>
       </nav>
 
-      <div className="flex flex-col items-start object-cover w-full h-full px-5 py-4 border border-solid rounded-b-2xl border-neutral-700 bg-neutral-800">
+      <div className="flex flex-col items-start object-cover w-full h-[90%] px-5 py-4 border border-solid rounded-b-2xl border-neutral-700 bg-neutral-800">
         {renderContent()}
       </div>
-    </div>
+    </motion.div>
   );
 }

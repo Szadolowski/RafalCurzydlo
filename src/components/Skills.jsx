@@ -1,6 +1,6 @@
 import { PortfolioContext } from "../store/portfolio-context";
 import { use, useState } from "react";
-import { motion } from "motion/react"; //es-lint-disable-line
+import { motion } from "motion/react"; // eslint-disable-line
 
 export default function Skills() {
   const portfolioContext = use(PortfolioContext);
@@ -21,7 +21,14 @@ export default function Skills() {
                   : "bg-neutral-800 text-neutral-400 hover:bg-neutral-700";
 
               return (
-                <li className="mb-2" key={index}>
+                <motion.li
+                  className="mb-2"
+                  key={index}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.2, delay: index * 0.05 }}
+                >
                   <button
                     key={index}
                     className={`py-2 pl-2 rounded-lg transition-colors duration-200 text-left w-24 ${classes}`}
@@ -29,7 +36,7 @@ export default function Skills() {
                   >
                     {name.charAt(0).toUpperCase() + name.slice(1)}
                   </button>
-                </li>
+                </motion.li>
               );
             })}
           </ul>
