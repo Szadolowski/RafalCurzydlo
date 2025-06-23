@@ -42,7 +42,10 @@ export default function Skills() {
           </ul>
         </aside>
 
-        <section className="w-full h-full overflow-y-auto">
+        <section className="w-full overflow-y-auto h-[500px] lg:h-[800px] scrollbar-none">
+          {
+            // "scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar scrollbar-thumb-slate-700 scrollbar-track-slate-300"
+          }
           {data.skillsGroup[skillsGroup].map((skill, index) => {
             return (
               <motion.section

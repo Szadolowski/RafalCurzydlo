@@ -2,6 +2,7 @@ import { PortfolioContext } from "../store/portfolio-context";
 import { use } from "react";
 import { motion } from "motion/react"; // eslint-disable-line
 import Skills from "./Skills";
+import Contact from "./Information";
 
 function NavElement({ children, position = null, choose, menu = false, ...props }) {
   const round =
@@ -35,7 +36,7 @@ export default function Block() {
       case "Projects":
         return portfolioContext.information.Projects.description();
       case "Contact":
-        return portfolioContext.information.Contact.description();
+        return <Contact />;
       default:
         return <p className="text-neutral-300">Select a card to view its content.</p>;
     }
@@ -47,7 +48,7 @@ export default function Block() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.3 }}
-      className="flex flex-col items-start justify-center object-cover w-full overflow-hidden resize-none min-h-4/5 max-h-4/5"
+      className="relative flex flex-col items-start justify-center object-cover w-full h-full"
     >
       <nav className="flex flex-row flex-wrap w-full lg:flex-nowrap">
         {portfolioContext.card.map((item, index) => (
@@ -82,7 +83,7 @@ export default function Block() {
         </NavElement>
       </nav>
 
-      <div className="flex flex-col items-start object-cover w-full h-[90%] px-5 py-4 border border-solid rounded-b-2xl border-neutral-700 bg-neutral-800">
+      <div className="flex flex-col items-start object-cover w-full h-full px-5 py-4 overflow-hidden border border-solid rounded-b-2xl border-neutral-700 bg-neutral-800">
         {renderContent()}
       </div>
     </motion.div>

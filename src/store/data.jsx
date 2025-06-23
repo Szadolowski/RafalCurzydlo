@@ -96,54 +96,47 @@ export const information = {
       );
     },
   },
-  Contact: {
-    title: "Contact",
-    information: [
-      {
-        type: "Email",
-        value: "rafallcurzydlo.biz@gmail.com",
-        svg: <Envelope />,
-      },
-      {
-        type: "Phone",
-        value: "+48 792 802 918",
-        svg: <Telephone />,
-      },
-      {
-        type: "Location",
-        value: "Słopnice, Poland",
-        svg: <Pin />,
-      },
-      {
-        type: "LinkedIn",
-        value: "https://www.linkedin.com/in/rafalcurzydlo/",
-        svg: <LinkedIn />,
-      },
-      {
-        type: "GitHub",
-        value: "https://github.com/Szadolowski",
-        svg: <GitHub />,
-      },
-      {
-        type: "Portfolio",
-        value: "https://twojastrona.pl", // Replace with your actual portfolio URL
-      },
-    ],
-  },
+  Information: [
+    {
+      type: "Email",
+      value: <a href="mailto:rafalcurzydlo.biz@gmail.com">rafalcurzydlo.biz@gmail.com</a>,
+      svg: <Envelope />,
+    },
+    {
+      type: "Phone",
+      value: <a href="tel:+48792802918">(+48) 792 802 918</a>,
+      svg: <Telephone />,
+    },
+    {
+      type: "Location",
+      value: "Słopnice, Poland",
+      svg: <Pin />,
+    },
+    {
+      type: "LinkedIn",
+      value: <a href="https://www.linkedin.com/in/rafalcurzydlo/">Linkedin</a>,
+      svg: <LinkedIn />,
+    },
+    {
+      type: "GitHub",
+      value: <a href="https://github.com/Szadolowski">Github</a>,
+      svg: <GitHub />,
+    },
+  ],
   Employer: {
     title: "Employer",
     company: [
       {
         name: "Laskopol Sp. z o.o.",
         position: "IT Specialist",
-        year: "2024 – present",
+        year: "10.2024 - present",
         description:
           "Developed internal dashboards and automation tools in ReactJS and Next.js, streamlining reporting and materials management for the company.",
       },
       {
         name: "GM PROJEKT",
         position: "Office Intern",
-        year: "2024",
+        year: "05.2024 - 10.2024",
         description:
           "Created data-driven reporting panels and optimized UI components in ReactJS, improving workflow efficiency and technical documentation.",
       },
