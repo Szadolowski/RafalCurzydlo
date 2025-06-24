@@ -6,12 +6,12 @@ export default function Information() {
   const data = portfolioContext.information.Information;
 
   return (
-    <div className="flex flex-col h-full w-[40%]  justify-center px-4 py-2 text-neutral-300 bg-neutral-800 rounded-lg lg:w-full lg:h-auto">
+    <div className="flex flex-col h-full w-[40%] pt-6 justify-center text-neutral-300 bg-neutral-800 rounded-lg lg:w-full lg:h-auto">
       <ul>
         {data.map((item, index) => (
-          <li key={index} className="flex flex-row">
+          <li key={index} className="flex flex-row space-y-2">
             {item.svg}
-            {item.value}
+            <p className="text-[0.90rem] text-neutral-300">{item.value}</p>
           </li>
         ))}
       </ul>

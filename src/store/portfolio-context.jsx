@@ -41,7 +41,7 @@ export const PortfolioContext = createContext({
           name: "",
           position: "",
           year: "",
-          description: "",
+          description: [],
         },
       ],
     },

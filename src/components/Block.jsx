@@ -3,6 +3,7 @@ import { use } from "react";
 import { motion } from "motion/react"; // eslint-disable-line
 import Skills from "./Skills";
 import Contact from "./Information";
+import Employer from "./Employer";
 
 function NavElement({ children, position = null, choose, menu = false, ...props }) {
   const round =
@@ -37,6 +38,8 @@ export default function Block() {
         return portfolioContext.information.Projects.description();
       case "Contact":
         return <Contact />;
+      case "Employer":
+        return <Employer />;
       default:
         return <p className="text-neutral-300">Select a card to view its content.</p>;
     }

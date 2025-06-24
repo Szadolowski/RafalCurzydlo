@@ -130,15 +130,24 @@ export const information = {
         name: "Laskopol Sp. z o.o.",
         position: "IT Specialist",
         year: "10.2024 - present",
-        description:
-          "Developed internal dashboards and automation tools in ReactJS and Next.js, streamlining reporting and materials management for the company.",
+        description: [
+          `Front-end development: designing and implementing internal web dashboards in ReactJS and Next.js, includingFront-end development: designing and implementing internal web dashboards using ReactJS and Next.js, including a report-generation panel (REST API, SQL queries), materials and equipment management interface, and client-project-document portal.`,
+          `Process automation (JavaScript, Bash): data processing, system monitoring, backups`,
+          `Server & permissions administration: NAS storage, user accounts on Windows and Linux`,
+          `LAN/WAN networking: configuring switches, routers, firewalls; monitoring and troubleshooting hardware, software, and connectivity issues`,
+        ],
       },
       {
         name: "GM PROJEKT",
         position: "Office Intern",
         year: "05.2024 - 10.2024",
-        description:
-          "Created data-driven reporting panels and optimized UI components in ReactJS, improving workflow efficiency and technical documentation.",
+        description: [
+          `Front-end development: building interactive applications with ReactJS, Next.js, and TailwindCSS (data-driven report panels, responsive UI components)`,
+          `Back-end integration: consuming REST APIs, writing SQL queries, developing JavaScript utilities to automate workflows`,
+          `Performance optimization: ensuring component efficiency and cross-browser compatibility`,
+          `Technical documentation: maintaining and updating user guides and specifications`,
+          `Technical support: diagnosing and resolving hardware, software, and network incidents`,
+        ],
       },
     ],
   },
