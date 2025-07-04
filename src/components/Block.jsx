@@ -2,7 +2,7 @@ import { PortfolioContext } from "../store/portfolio-context";
 import { use } from "react";
 import { motion } from "motion/react"; // eslint-disable-line
 import Skills from "./Skills";
-import Contact from "./Information";
+import Contact from "./Contact";
 import Employer from "./Employer";
 
 function NavElement({ children, position = null, choose, menu = false, ...props }) {
