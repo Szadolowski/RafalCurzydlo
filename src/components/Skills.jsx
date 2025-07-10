@@ -10,7 +10,15 @@ export default function Skills() {
 
   return (
     <div className="object-cover w-full h-full">
-      <h1 className="text-2xl font-bold text-neutral-200">{data.title}</h1>
+      <motion.h1
+        className="text-2xl font-bold text-neutral-200"
+        initial={{ opacity: 0.3, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0.3, y: -10 }}
+        transition={{ duration: 0.3 }}
+      >
+        {data.title}
+      </motion.h1>
       <main className="flex flex-row w-full h-full space-x-5">
         <aside>
           <ul>
@@ -43,9 +51,6 @@ export default function Skills() {
         </aside>
 
         <section className="w-full overflow-y-auto h-[500px] lg:h-[800px] scrollbar-none">
-          {
-            // "scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar scrollbar-thumb-slate-700 scrollbar-track-slate-300"
-          }
           {data.skillsGroup[skillsGroup].map((skill, index) => {
             return (
               <motion.section

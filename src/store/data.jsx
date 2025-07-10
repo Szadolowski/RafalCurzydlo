@@ -161,7 +161,7 @@ export const information = {
       },
       {
         name: "Zespół Szkół Technicznych i Ogólnokształcących w Limanowej",
-        degree: "Technik Informatyk",
+        degree: "IT Technician",
         year: "2019 - 2024",
       },
     ],
